@@ -1,10 +1,11 @@
 public class ListNode {
-    int data;
+
+    int val;
     ListNode node;
     ListNode next;
 
-    ListNode(int data){
-        this.data=data;
+    ListNode(int val){
+        this.val=val;
     }
 
 }
