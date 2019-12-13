@@ -1,7 +1,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello this is my first mac processing!");
-        System.out.println("shabi" );
+        String a=new String("aaa");
+        String b="aaa";
+        a.intern();
+        System.out.println(a.equals(b));
+        System.out.println(a==b);
     }
 }
