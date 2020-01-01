@@ -5,19 +5,18 @@ public class T30 {
     Stack<Integer> stackmin=new Stack<>();
 
     public void push(int node) {
-        if(stack.isEmpty()){
-            stack.push(node);
+        stack.push(node);
+        if(stackmin.isEmpty()){
             stackmin.push(node);
         }
-        else if(node<stackmin.peek()){
-            stack.push(node);
-            stackmin.push(node);
+        else {
+            if(node>=stackmin.peek()){
+                stackmin.push(stackmin.peek());
+            }
+            else if(node<stackmin.peek()){
+                stackmin.push(node);
+            }
         }
-        else if(node>=stackmin.peek()){
-            stack.push(node);
-            stackmin.push(stackmin.peek());
-        }
-
     }
 
     public void pop() {
@@ -28,9 +27,11 @@ public class T30 {
 
     public int top() {
         return stack.peek();
+
     }
 
     public int min() {
         return stackmin.peek();
     }
+
 }

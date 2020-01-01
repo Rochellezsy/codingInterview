@@ -19,7 +19,6 @@ public class P30 {
                 stackmin.push(stackmin.peek());
             }
         }
-
     }
 
     public void pop() {
