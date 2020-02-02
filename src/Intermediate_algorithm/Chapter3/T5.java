@@ -12,8 +12,6 @@ public class T5 {
         bfs(root,list);
         Collections.sort(list);
         return list.get(k-1);
-
-
     }
     public void bfs(TreeNode root, List<Integer> list){
         if(root!=null){
