@@ -40,7 +40,6 @@ public class T6 {
             ans[j][1]=res.get(j).get(1);
         }
         return ans;
-
     }
 
     public static void main(String[] args) {
