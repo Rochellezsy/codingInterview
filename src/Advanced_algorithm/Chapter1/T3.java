@@ -13,15 +13,12 @@ public class T3 {
             }
         }
         int count=0;
-
         for (int i : C) {
             for (int j : D) {
                 count+=map.getOrDefault(-(i+j),0);
             }
         }
         return count;
-
-
     }
 
     public static void main(String[] args) {
