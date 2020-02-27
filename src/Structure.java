@@ -86,7 +86,7 @@ public class Structure {
             ListNode res=new ListNode(0);
             ListNode p=res;
             p.next=head;
-            if(p.next!=null){
+            while(p.next!=null){
                 if(p.next.val==value){
                     p.next=p.next.next;
                 }
