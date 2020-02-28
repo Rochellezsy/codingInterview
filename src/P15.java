@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class P15 {
     public int NumberOf1(int n) {
         int count=0;
