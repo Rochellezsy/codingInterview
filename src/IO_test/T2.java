@@ -29,8 +29,5 @@ public class T2 {
         t2.show(a);
 
 
-
-
-
     }
 }

@@ -53,8 +53,6 @@ public class WaitTest {
                     count--;
                     System.out.println("消费者消费，数量为"+count);
                     obj.notifyAll();
-
-
                 }
             }
         }
