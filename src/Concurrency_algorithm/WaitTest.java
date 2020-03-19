@@ -1,71 +1,74 @@
 package Concurrency_algorithm;
-
-public class WaitTest {
-    private static int count=0;
+public class WaitTest{
     private static int capacity=10;
-    private static String obj="";
+    private static int count=0;
+    private static String lock="lock";
 
-    class Producer implements Runnable{
+    //生产者
+    class Produce implements Runnable{
         @Override
-        public void run() {
-            while(true){
-                try {
+        public void run(){
+            for(int i=0;i<10;i++){
+                try{
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
+                }catch(InterruptedException e){
                     e.printStackTrace();
                 }
 
-                synchronized (obj){
-                    for(int j=0;j<4;j++){
-                        while(count==capacity){
-                            try {
-                                obj.wait();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                synchronized(lock){
+                    while(count==capacity){
+                        try{
+                            lock.wait();
+                        }catch(InterruptedException e){
+                            e.printStackTrace();
                         }
-                        count++;
-                        System.out.println("生产者生产，仓库数量为"+count);
                     }
-                    obj.notifyAll();
+                    count++;
+                    System.out.println("生产者生产，数量为："+count);
+                    lock.notifyAll();
                 }
             }
+
         }
     }
 
-    class Consumer implements Runnable{
+    class Consume implements Runnable{
         @Override
-        public void run() {
-            while(true){
-                try {
+        public void run(){
+            for(int i=0;i<10;i++){
+
+                try{
                     Thread.sleep(1000);
-                } catch (InterruptedException e) {
+                }catch(InterruptedException e){
                     e.printStackTrace();
                 }
-                synchronized (obj){
+
+                synchronized(lock){
                     while(count==0){
-                        try {
-                            obj.wait();
-                        } catch (InterruptedException e) {
+                        try{
+                            lock.wait();
+                        }
+                        catch(InterruptedException e){
                             e.printStackTrace();
                         }
                     }
                     count--;
-                    System.out.println("消费者消费，数量为"+count);
-                    obj.notifyAll();
+                    System.out.println("消费者消费，数量为："+count);
+                    lock.notifyAll();
                 }
             }
+
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         WaitTest waitTest=new WaitTest();
-        Thread thread1=new Thread(waitTest.new Producer());
-        Thread thread2=new Thread(waitTest.new Consumer());
-        thread1.start();
-        thread2.start();
-
-
+        new Thread(waitTest.new Produce()).start();
+        new Thread(waitTest.new Consume()).start();
+        new Thread(waitTest.new Produce()).start();
+        new Thread(waitTest.new Consume()).start();
+        new Thread(waitTest.new Produce()).start();
+        new Thread(waitTest.new Consume()).start();
 
     }
 }
