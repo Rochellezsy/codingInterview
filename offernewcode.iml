@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/daily_test/200316" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/daily_test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/daily_test/200317" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/daily_test/200321" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
