@@ -3,7 +3,7 @@ package kickstart;
 import java.util.Arrays;
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public int count(int[]arr, int B){
         Arrays.sort(arr);
         int count=0;
