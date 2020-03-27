@@ -16,6 +16,7 @@ public class MyStack {
         queue.add(x);
         while(count>=1){
             queue.add(queue.poll());
+            count--;
         }
     }
 
