@@ -2,10 +2,21 @@ package Sort_algorithm;
 
 public class ListNodeSort {
 
-    public void sort(ListNode head){
+    public ListNode sort(ListNode head){
+        if(head==null || head.next==null)return head;
         ListNode slow=head;
-        ListNode fast=head;
+        ListNode fast=head.next;
+        ListNode l=head;
 
+        while(fast!=null &&fast.next!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        ListNode r=slow.next;
+        slow.next=null;
+        ListNode left=sort(r);
+        ListNode right=sort(l);
+        return merge(left,right);
     }
 
     public ListNode merge(ListNode l1, ListNode l2){
