@@ -1,4 +1,4 @@
-package Saima_Test;
+package chunzhao.Saima_Test;
 import java.util.Scanner;
 
 public class T1 {

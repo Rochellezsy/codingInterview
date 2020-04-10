@@ -1,4 +1,4 @@
-package Meituan;
+package chunzhao.Meituan;
 
 import java.util.Arrays;
 import java.util.Scanner;

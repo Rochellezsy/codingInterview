@@ -1,7 +1,5 @@
-package alibaba_exam;
+package chunzhao.alibaba;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {

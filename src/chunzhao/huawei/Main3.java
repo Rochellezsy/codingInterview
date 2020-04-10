@@ -1,9 +1,4 @@
-package huawei;
-
-import java.sql.Struct;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+package chunzhao.huawei;
 
 public class Main3 {
 

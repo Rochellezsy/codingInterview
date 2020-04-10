@@ -1,4 +1,4 @@
-package alibaba_exam;
+package chunzhao.alibaba;
 
 import java.util.Scanner;
 

@@ -1,6 +1,4 @@
-package Meituan;
-
-import Saima_Test.Main;
+package chunzhao.Meituan;
 
 import java.util.Scanner;
 
