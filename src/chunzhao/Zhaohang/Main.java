@@ -1,4 +1,4 @@
-package Zhaohang;
+package chunzhao.Zhaohang;
 
 import java.util.Arrays;
 import java.util.Scanner;

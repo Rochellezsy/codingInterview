@@ -1,8 +1,4 @@
-package wangyi;
-
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.Scanner;
+package chunzhao.wangyi;
 
 public class Main2 {
 //    int ans=Integer.MAX_VALUE;

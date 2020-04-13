@@ -1,4 +1,4 @@
-package wangyi;
+package chunzhao.wangyi;
 
 import java.util.HashSet;
 import java.util.Scanner;

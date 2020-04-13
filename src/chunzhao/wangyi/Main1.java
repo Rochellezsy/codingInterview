@@ -1,4 +1,4 @@
-package wangyi;
+package chunzhao.wangyi;
 
 import java.util.Arrays;
 import java.util.Scanner;

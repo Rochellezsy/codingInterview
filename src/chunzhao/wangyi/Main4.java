@@ -1,8 +1,5 @@
-package wangyi;
+package chunzhao.wangyi;
 
-import java.net.Inet4Address;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main4 {
