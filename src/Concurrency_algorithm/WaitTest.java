@@ -14,7 +14,6 @@ public class WaitTest{
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }
-
                 synchronized(lock){
                     while(count==capacity){
                         try{

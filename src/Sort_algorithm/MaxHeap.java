@@ -94,7 +94,6 @@ public class MaxHeap {
         }
     }
 
-
     //交换函数
     public void swap(int[]a,int i,int j){
         int temp=a[i];
@@ -113,6 +112,4 @@ public class MaxHeap {
         test.print();
 
     }
-
-
 }
