@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Stack;
 
 public class T31 {
@@ -15,5 +16,20 @@ public class T31 {
             }
         }
         return stack.isEmpty();
+    }
+
+    public int findSpecialInteger(int[] arr) {
+        int len=arr.length;
+        HashMap<Integer, Integer> map=new HashMap<>();
+        for(int a: arr){
+            map.put(a, map.getOrDefault(a,0)+1);
+        }
+        for(int key: map.keySet()){
+            if(map.get(key)>len/4){
+                return key;
+            }
+        }
+        return -1;
+
     }
 }

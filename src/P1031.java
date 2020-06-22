@@ -14,6 +14,5 @@ public class P1031 {
             res=Math.max(res, Mmax+A[i]-A[i-L]);
         }
         return res;
-
     }
 }
