@@ -17,6 +17,5 @@ public class P654 {
         root.left = constructMaximumBinaryTree(Arrays.copyOfRange(nums, 0, index));
         root.right = constructMaximumBinaryTree(Arrays.copyOfRange(nums, index+1, nums.length));
         return root;
-
     }
 }

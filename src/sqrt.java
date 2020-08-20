@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 
 public class sqrt {
-    public double mySqrt(int x) {
+    public double mySqrt(double x) {
         DecimalFormat df = new DecimalFormat("0.00000");
         double l = 0;
         double r = x;
@@ -20,11 +20,10 @@ public class sqrt {
             last = mid;
         }
         return -1;
-
     }
 
     public static void main(String[] args) {
         sqrt test = new sqrt();
-        System.out.println(test.mySqrt(5));
+        System.out.println(test.mySqrt(2.25));
     }
 }
