@@ -9,8 +9,7 @@ public class WaitNotifyTest {
     /**
      * 生产者
      */
-    class Prodece implements Runnable{
-
+    class Produce implements Runnable{
         @Override
         public void run() {
             for(int i=0;i<10;i++){
@@ -39,7 +38,6 @@ public class WaitNotifyTest {
      * 消费者
      */
     class Comsume implements Runnable{
-
         @Override
         public void run() {
             for(int i=0;i<10;i++){
@@ -67,7 +65,7 @@ public class WaitNotifyTest {
     //主函数
     public static void main(String[] args) {
         WaitNotifyTest waitNotifyTest=new WaitNotifyTest();
-        new Thread(waitNotifyTest.new Prodece()).start();
+        new Thread(waitNotifyTest.new Produce()).start();
         new Thread(waitNotifyTest.new Comsume()).start();
 
     }
