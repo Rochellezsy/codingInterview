@@ -1,70 +1,48 @@
 package qiuzhao.Didi;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    static int N = 1000;
+    static int[][] maze;
+    static int[] dis;
+    static boolean[] vis;
 
-    static int min = Integer.MAX_VALUE;
-    static int[][] edge = new int[100][100];
-    static int[] vertex = new int[1000];
-    static int n, m;
-    static Scanner input = new Scanner(System.in);
-
-    public static void dfs(int cur, int dis) {
-        /**
-         * 如果当前路径大于之前找到的最小值，可直接返回
-         * */
-        if (dis > min) {
-            return;
-        }
-        /**
-         * 判断是否达到最后一个结点，更新最小值，返回
-         * */
-        if(cur == n) {
-            if (dis < min) {
-                min = dis;
-                return;
-            }
-        }
-        /**
-         * 当前点到其他各点之间可连通但是还未添加进来时，遍历执行
-         * */
-        for (int i = 1; i <= n; i++) {
-            if (edge[cur][i] != Integer.MAX_VALUE && vertex[i] == 0) {
-                vertex[i] = 1;
-                dfs(i, dis+edge[cur][i]);
-                /**
-                 * 回溯
-                 **/
-                vertex[i] = 0;
-            }
-        }
-        return;
+    public static void init(){
+        maze = new int[N][N];
+        Arrays.fill(maze, Integer.MAX_VALUE);
+        dis = new int [N];
+        Arrays.fill(dis, Integer.MAX_VALUE);
+        vis = new boolean[N];
     }
 
-//    public static void main(String[] args) {
-//        n = input.nextInt();
-//        m = input.nextInt();
-//        for (int i = 1; i <= n; i++) {
-//            for (int j = 1; j <= m; j++) {
-//                if (i == j) {
-//                    edge[i][j] = 0;
-//                } else {
-//                    edge[i][j] = Integer.MAX_VALUE;
-//                }
-//            }
-//        }
-//        for (int i = 1; i <= m; i++) {
-//            int a = input.nextInt();
-//            int b = input.nextInt();
-//            int c = input.nextInt();
-//            edge[a][b] = c;
-//        }
-//
-//        vertex[1] = 1;
-//        dfs(1, 0);
-//        System.out.println(min);
-//    }
+    public static void dijkstra(int st, int n, int m)
+    {
+        dis[st]=0;
+        for(int i=1; i<=n; i++)
+        {
+            //找到和起点距离最短的点
+            int minx=0;
+            int minmark = 0;
+            for(int j=1; j<=n; j++)
+            {
+                if(!vis[j] && dis[j]<=minx)
+                {
+                    minx=dis[j];
+                    minmark=j;
+                }
+            }
+            //并标记
+            vis[minmark]=true;
+            //更新所有和它连接的点的距离
+            for(int j=1; j<=n; j++)
+            {
+                if(!vis[j] && dis[j]>dis[minmark]+maze[minmark][j])
+                    dis[j]=dis[minmark]+maze[minmark][j];
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -74,25 +52,19 @@ public class Main {
             int n = scanner.nextInt();
             int m = scanner.nextInt();
             int k = scanner.nextInt();
-            for (int i = 1; i <= n; i++) {
-                for (int j = 1; j <= m; j++) {
-                    if (i == j) {
-                        edge[i][j] = 0;
-                    } else {
-                        edge[i][j] = Integer.MAX_VALUE;
-                    }
-                }
+            init();
+            for(int i=1; i<=m; i++)
+            {
+                int x = scanner.nextInt();
+                int y = scanner.nextInt();
+                int len = scanner.nextInt();
+                maze[y][x]=len;
+                maze[x][y]=len;
             }
-            for (int i = 1; i <= m; i++) {
-                int a = scanner.nextInt();
-                int b = scanner.nextInt();
-                int c = scanner.nextInt();
-                edge[a][b] = c;
-            }
-
-            vertex[1] = 1;
-            dfs(1, 0);
-            System.out.println(min);
+            //以1为起点跑一次dij
+            dijkstra(1, n, m);
+            //输出到n的距离
+            System.out.println(dis[n]);
 
         }
     }
