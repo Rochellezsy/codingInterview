@@ -8,7 +8,6 @@ public class Quicksort {
         int p=partition(nums,l,r);
         sort(nums, l, p-1);
         sort(nums, p+1, r);
-
     }
 
     public int partition(int[]nums, int left, int right){
