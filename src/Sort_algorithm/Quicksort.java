@@ -42,6 +42,5 @@ public class Quicksort {
         for(int num:nums){
             System.out.print(num+" ");
         }
-
     }
 }

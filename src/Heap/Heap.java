@@ -47,7 +47,6 @@ public class Heap {
         return max;
     }
 
-
     public void swim(int k){
         while(k>1 && a[k]>a[k/2]){
             swap(a, k, k/2);
@@ -77,5 +76,4 @@ public class Heap {
         a[i] = a[j];
         a[j] = temp;
     }
-
 }
