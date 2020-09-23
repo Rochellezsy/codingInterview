@@ -85,7 +85,7 @@ public class MaxHeap {
 
     public static void main(String[] args) {
         MaxHeap test=new MaxHeap(6);
-        int[] nums={10,8,2,5,3,11};
+        int[] nums={5,13,9,2,3,19};
         for (int num : nums) {
             test.insert(num);
         }
