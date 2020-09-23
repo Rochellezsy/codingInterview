@@ -39,7 +39,7 @@ public class Main {
             }
         }
         for (BigDecimal re : res) {
-            System.out.println(re);
-        }
+        System.out.println(re);
     }
+}
 }
