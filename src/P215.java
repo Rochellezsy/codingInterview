@@ -17,8 +17,6 @@ public class P215 {
                 left = index + 1;
             }
         }
-
-
     }
 
     public int partition(int[]nums, int left, int right){

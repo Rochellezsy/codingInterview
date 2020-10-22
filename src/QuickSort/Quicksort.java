@@ -14,7 +14,7 @@ public class Quicksort {
         int i = l+1;
         int j = r;
         while(true){
-            while (nums[i]<pivot && i<r){
+            while (nums[i]<pivot && i<=r){
                 i++;
             }
             while (nums[j]>pivot && j>l){
