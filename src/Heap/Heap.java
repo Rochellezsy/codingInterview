@@ -52,7 +52,6 @@ public class Heap {
             swap(a, k, k/2);
             k = k/2;
         }
-
     }
 
     public void sink(int k){
